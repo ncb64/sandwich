@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+}
+
+body {
+    display: grid;
+    /* 2 columns: The main content area (auto) and the sidebar (300px) */
+    grid-template-columns: auto 300px;
+    /* 3 rows: Header (100px), Main Content (auto), Bottom Bar (150px) */
+    grid-template-rows: 100px auto 150px;
+    /* Assign names to the areas for easier placement */
+    grid-template-areas: 
+        "header sidebar" 
+        "main sidebar"
+        "bottom stock";
+    /* Use a visually distinct color for testing */
+    background-color: #f0f0f0; 
+}
+
+#header {
+    grid-area: header;
+    background-color: #5d5d5d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: #c9c9c9;
+    border-left: 2px solid #333;
+    padding: 10px;
+    /* Optional: Make the sidebar content scrollable if it gets too long */
+    overflow-y: auto; 
+}
+
+#sandwich-window {
+    /* This element takes up the main area in the second row */
+    grid-area: main;
+    background-color: #e8e8e8;
+    border-bottom: 2px solid #333; /* Separator for the bottom bar */
+}
+
+#footer {
+    grid-area: bottom;
+    background-color: #a8a8a8;
+    /* Use Flexbox to lay out the menu and ingredients sections horizontally */
+    display: flex; 
+}
+
+#stock {
+    grid-area: stock;
+    background-color: #a8a8a8;
+    display: flex;
+}
+
+/* General container styling */
+#orders, #menu, #ingredients, #stock-box {
+    border: 1px dashed #777;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+/* Tweak font sizes for a game feel */
+h1 { font-size: 24px; margin: 0; }
+h3 { font-size: 18px; margin: 5px 0; }
+
+/* The two sections inside the control-bar */
+#footer > div, #stock > div {
+    flex: 1; /* Makes them share the available space equally */
+    padding: 10px;
+}
