@@ -1,0 +1,23 @@
+{
+  "name": "sandwich",
+  "version": "1.0.0",
+  "description": "sandwich game for bella :)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncb64/sandwich.git"
+  },
+  "author": "nicholas",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ncb64/sandwich/issues"
+  },
+  "homepage": "https://github.com/ncb64/sandwich#readme",
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
+}
