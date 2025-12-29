@@ -4,6 +4,8 @@ const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
   const win = new BrowserWindow({
+    fullscreen: true,
+    // only takes effect if windowed:
     width: 800,
     height: 600
   })

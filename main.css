@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+    image-rendering: pixelated; /* to prevent blurry pixel art */
+}
+
+body {
+    display: grid;
+    /* 2 columns: The main content area (auto) and the sidebar (300px) */
+    grid-template-columns: auto 25%;
+    /* 3 rows: Header (100px), Main Content (auto), Bottom Bar (150px) */
+    grid-template-rows: 15% auto 30%;
+    /* Assign names to the areas for easier placement */
+    grid-template-areas: 
+        "header sidebar" 
+        "main sidebar"
+        "bottom bottom";
+
+    /* font */
+    font-family: 'Press Start 2P', system-ui;
+
+    /* prevent text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+}
+
+.sign {
+    background-image: url('assets/sign.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /* centering text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: rgba(62, 39, 35, 0.9);
+    text-shadow: 2px 2px 0px rgba(203, 182, 151, 0.9);
+
+    /* shadow */
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.sign h1, 
+.sign h2, 
+.sign h3 {
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Tweak font sizes for a game feel */
+h1 { font-size: 18px; margin: 0; }
+h3 { font-size: 16px; margin: 0; }
+
+/* The two sections inside the control-bar */
+#footer > div {
+    flex: 1;
+    padding: 10px;
+}
